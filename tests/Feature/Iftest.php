@@ -10,13 +10,13 @@ class Iftest extends TestCase
 {
     public function testIf()
     {
-        $this->view("if", ["hobbies" => []] )
+        $this->view("conditional.if", ["hobbies" => []] )
             ->assertSeeText("I don't have any hobbies!", false);
 
-        $this->view("if", ["hobbies" => ["Coding"]] )
+        $this->view("conditional.if", ["hobbies" => ["Coding"]] )
             ->assertSeeText("I have one hobby!");
 
-        $this->view("if", ["hobbies" => ["Coding", "Gaming"]] )
+        $this->view("conditional.if", ["hobbies" => ["Coding", "Gaming"]] )
             ->assertSeeText("I have multiple hobbies!");
     }
 

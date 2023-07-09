@@ -10,10 +10,10 @@ class Unlesstest extends TestCase
 {
     public function testUnless()
     {
-        $this->view("unless", ["isAdmin" => true])
+        $this->view("conditional.unless", ["isAdmin" => true])
             ->assertDontSeeText("You are not admin.");
 
-        $this->view("unless", ["isAdmin" => false])
+        $this->view("conditional.unless", ["isAdmin" => false])
             ->assertSeeText("You are not admin.");
     }
 
